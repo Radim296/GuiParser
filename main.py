@@ -45,7 +45,7 @@ class gui():
         self.root.geometry(config.wind_geometry)
         self.root["bg"] = config.wind_background 
         self.root.iconbitmap(config.wind_icon)
-        self.root.resizable(False, False)
+        self.root.resizable(False, False) # hello
         self.makeMenu()
         self.makewidgets()
         self.root.config(menu = self.mainmenu)
