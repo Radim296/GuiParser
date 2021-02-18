@@ -1,6 +1,8 @@
 # Настройки программы 
 pasteFromClipboard = False # Вставлять значение ссылки из буфера обмена при запуске программы
-COLORTHEME = "blue" # Цветовая тема 
+COLORTHEME = "" # Цветовая тема 
+colorthemeFile = "files\COLORTHEME" # Файл с цветовой темой 
+askQuestionWhenTheme = False # Отправлять диалоговое окно, при замене темы
 
 # Настройки для гугл таблиц 
 ApiKey = "KeyOne.json" # Ключ для подключения к гугл таблицам
