@@ -18,10 +18,11 @@ palitrs = {
     "blue" : "#1240AB	#2A4480	#06266F	#4671D5	#6C8CD5",
     "grey" : "#4C4C4C	#5B5B5B	#323232	#797979	#9D9D9D",
     "greyWhite" : "#4C4C4C	#5A5A5A	#272727	#A6A6A6	#EDEDED",
-    "white" : "#ffffff #ffffff #000000 #ffffff #ffffff"
+    "white" : "#ffffff #ffffff #000000 #ffffff #ffffff",
+    "OrangeBlue" : "#f7f6e7 #f7f6e7 #314e52 #314e52 #f2a154"
 }
 themes = []
-for i in palitrs:
+for i in cf.palitrs:
     themes.append(i)
 palitr = palitrs[cf.COLORTHEME if cf.COLORTHEME != "" else open(cf.colorthemeFile).read() if open(cf.colorthemeFile).read() in themes else "white"].split()
 class colors():
@@ -55,13 +56,13 @@ def newTheme(color):
 
 class config():
     # Конфигурация окна
-    wind_name = "Парсер" #Имя окна
+    wind_name = "" #Имя окна
     wind_geometry = "585x130" #Размеры окна 
     wind_background = colors.five #Фоновый цвет окна 
     wind_icon = "files\icon.ico"#Путь к иконки
     # Конфигурация кнопок
     buttons_bg = colors.four
-    buttons_fg = "black"#colors.three 
+    buttons_fg = "black"
     buttons_height = 2
     buttons_width = 10
 
@@ -117,6 +118,8 @@ class gui():
         # Инициализация элементов меню
         self.mainmenu.add_cascade(menu=self.filemenu, label ="Файл")
         self.mainmenu.add_cascade(menu=self.themesmenu, label ="Выбрать тему")
+        self.mainmenu.entryconfigure(1,columnbreak=1)
+        
 
 def main():
     window = gui()
